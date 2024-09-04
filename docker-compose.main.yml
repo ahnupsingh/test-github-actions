@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  pe-mit-ui:
+    build: .
+    image: 339712875877.dkr.ecr.ap-south-1.amazonaws.com/pe-mit-fe:dev
+    container_name: pe-mit-dev-fe-container 
+    ports:
+      - 5001:80
+    env_file:
+      - .env
+    networks:
+      - pe-mit
+
+networks:
+  pe-mit:
+    driver: bridge
